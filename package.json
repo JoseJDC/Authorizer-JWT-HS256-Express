@@ -1,0 +1,22 @@
+{
+  "name": "authorizer-jwt-hs256-express",
+  "version": "1.0.0",
+  "description": "Boilerplate para autenticación con JWT HS256 usando Express",
+  "main": "src/app.js",
+  "scripts": {
+    "dev": "node --watch src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "type": "module",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.0.1",
+    "express": "^5.1.0",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.0",
+    "pg": "^8.16.3",
+    "zod": "^3.25.74"
+  }
+}
