@@ -14,10 +14,20 @@ app.use(helmet());
 app.use(morgan("dev"));
 
 app.use("/api/auth", authRouter);
-// app.use("/api/privado");
 
 app.get("/api/privado", jwtAuthentication, (req, res) => {
-  res.json({ mensaje: "Acceso concedido", token: req.token });
+  res.json({ message: "Acceso concedido", token: req.token });
+});
+
+app.use((req, res, next) => {
+  res.status(404).json({
+    message: "Recurso no encontrado",
+    status: 404,
+  });
+});
+
+app.use((err, req, res, next) => {
+  res.status(500).json({ message: "Error interno al procesar la información" });
 });
 
 app.listen(config.PORT, () => {

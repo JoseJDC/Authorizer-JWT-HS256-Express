@@ -5,6 +5,6 @@ import { loginUserSchema } from "../schemas/user.schema.js";
 
 const router = Router();
 
-router.post("/login", schemaValidator(loginUserSchema) , authController.login);
+router.post("/login", schemaValidator(loginUserSchema), authController.login);
 
 export default router;
